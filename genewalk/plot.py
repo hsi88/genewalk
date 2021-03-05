@@ -135,6 +135,7 @@ class GW_Plotter(object):
                       line=dict(color='grey', dash='dash'))
         fig.add_shape(type='line', x0=T_gcon, y0=0, x1=T_gcon, y1=1,
                       line=dict(color='grey', dash='dash'))
+        fig.update_traces(texttemplate='%{text:.2s}', textposition='outside')
         plotly_html = fig.to_html(full_html=False)
         fig.write_html(os.path.join(self.path, filename + '.html'))
         logger.info('%s plotted in %s...' % (plot_title, filename))
